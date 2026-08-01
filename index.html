@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expressing opinions · Vocabulary review · B1–B2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f5efe8;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            display: flex;
+            justify-content: center;
+            padding: 2.5rem 1rem;
+            min-height: 100vh;
+        }
+
+        .worksheet {
+            max-width: 880px;
+            width: 100%;
+            background: #fffef9;
+            border: 2px solid #d6c5b3;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            padding: 2.8rem 2.5rem;
+            position: relative;
+        }
+
+        .worksheet::before {
+            content: "";
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            right: 16px;
+            bottom: 16px;
+            border: 1px dashed #d9cdbc;
+            border-radius: 18px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 400;
+            color: #4a3b2f;
+            text-align: center;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid #e0d3c2;
+            padding-bottom: 0.7rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #7a6855;
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: 2.2rem;
+        }
+
+        .section {
+            margin-bottom: 2.4rem;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #5c4b38;
+            border-left: 5px solid #c7af92;
+            padding-left: 1rem;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-title span {
+            background: #ede3d6;
+            color: #4a3b2f;
+            border-radius: 50%;
+            width: 2rem;
+            height: 2rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .word-box {
+            background: #faf7f2;
+            border: 1px solid #d6c5b3;
+            border-radius: 14px;
+            padding: 1rem 1.4rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem 1.4rem;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            color: #3e3326;
+        }
+
+        .word-box .word-chip {
+            font-weight: 600;
+            color: #7a5a3e;
+            background: #fffef9;
+            border: 1px solid #cfbea7;
+            border-radius: 20px;
+            padding: 0.25rem 0.9rem;
+            cursor: default;
+            transition: all 0.3s ease;
+            user-select: none;
+            position: relative;
+        }
+
+        .word-box .word-chip.used {
+            text-decoration: line-through;
+            text-decoration-thickness: 2px;
+            text-decoration-color: #c0392b;
+            color: #b0a090;
+            opacity: 0.55;
+            background: #f5f0e8;
+            border-color: #d5c8b4;
+        }
+
+        .exercise-list {
+            list-style: none;
+            padding-left: 0.5rem;
+        }
+
+        .exercise-list li {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            color: #3e3326;
+            line-height: 1.6;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 0.3rem;
+        }
+
+        .exercise-list li .line-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 0.3rem;
+            width: 100%;
+        }
+
+        input[type="text"].blank-input {
+            border: none;
+            border-bottom: 2px dotted #b7a392;
+            background: transparent;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-size: 0.95rem;
+            color: #3e3326;
+            padding: 0.15rem 0.3rem;
+            outline: none;
+            transition: border-color 0.3s, background 0.3s;
+            text-align: center;
+            min-width: 100px;
+        }
+
+        input[type="text"].blank-input:focus {
+            border-bottom: 2px solid #c7af92;
+            background: #fefcf8;
+            border-radius: 4px 4px 0 0;
+        }
+
+        input[type="text"].blank-input.long {
+            min-width: 160px;
+        }
+
+        input[type="text"].blank-input.xlong {
+            min-width: 200px;
+        }
+
+        input[type="text"].blank-input.correct {
+            border-bottom: 2px solid #27ae60;
+            background: #eafaf1;
+            border-radius: 4px 4px 0 0;
+        }
+
+        input[type="text"].blank-input.incorrect {
+            border-bottom: 2px solid #c0392b;
+            background: #fdedec;
+            border-radius: 4px 4px 0 0;
+        }
+
+        textarea.blank-textarea {
+            border: 2px dotted #b7a392;
+            background: transparent;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-size: 0.95rem;
+            color: #3e3326;
+            padding: 0.4rem 0.6rem;
+            outline: none;
+            transition: border-color 0.3s, background 0.3s;
+            border-radius: 8px;
+            resize: vertical;
+            width: 95%;
+            min-height: 2.8rem;
+            display: block;
+            margin-top: 0.2rem;
+        }
+
+        textarea.blank-textarea:focus {
+            border-color: #c7af92;
+            background: #fefcf8;
+        }
+
+        textarea.blank-textarea.correct {
+            border-color: #27ae60;
+            background: #eafaf1;
+        }
+
+        textarea.blank-textarea.incorrect {
+            border-color: #c0392b;
+            background: #fdedec;
+        }
+
+        .phrase-bank {
+            background: #f3ede5;
+            border-radius: 12px;
+            padding: 1rem 1.4rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem 1.2rem;
+            font-size: 0.95rem;
+            color: #4f3e2c;
+            margin: 1.2rem 0;
+        }
+
+        .phrase-bank span {
+            background: white;
+            border: 1px solid #cfbea7;
+            border-radius: 20px;
+            padding: 0.25rem 0.9rem;
+            font-weight: 500;
+            user-select: none;
+        }
+
+        .dialogue-box {
+            background: #fdfaf5;
+            border: 1px solid #ddd2c0;
+            border-radius: 16px;
+            padding: 1.4rem 1.8rem;
+            font-size: 0.98rem;
+            color: #3b3124;
+        }
+
+        .dialogue-box p {
+            margin: 0.8rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 0.25rem;
+            line-height: 1.7;
+        }
+
+        .dialogue-box .blank-input {
+            min-width: 120px;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e4d8c8;
+            margin: 2rem 0 1rem;
+        }
+
+        .button-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-size: 1rem;
+            padding: 0.7rem 1.8rem;
+            border-radius: 30px;
+            border: 2px solid #c7af92;
+            background: #fffef9;
+            color: #4a3b2f;
+            cursor: pointer;
+            transition: all 0.25s;
+            letter-spacing: 0.4px;
+            font-weight: 500;
+        }
+
+        .btn:hover {
+            background: #ede3d6;
+            border-color: #b09070;
+        }
+
+        .btn.check-btn {
+            background: #e8dccf;
+            border-color: #b09070;
+        }
+
+        .btn.check-btn:hover {
+            background: #d9c8b2;
+        }
+
+        .btn.show-btn {
+            background: #fffef9;
+            border-color: #c7af92;
+        }
+
+        .btn.show-btn:hover {
+            background: #f5efe6;
+        }
+
+        .btn.reset-btn {
+            background: #fffef9;
+            border-color: #d5c4b0;
+            color: #7a6855;
+        }
+
+        .btn.reset-btn:hover {
+            background: #f9f5ef;
+        }
+
+        .feedback-msg {
+            text-align: center;
+            margin-top: 1rem;
+            font-style: italic;
+            font-size: 0.95rem;
+            min-height: 1.5rem;
+            color: #5c4b38;
+            transition: color 0.3s;
+        }
+
+        .feedback-msg.success {
+            color: #27ae60;
+        }
+        .feedback-msg.partial {
+            color: #e67e22;
+        }
+        .feedback-msg.error {
+            color: #c0392b;
+        }
+
+        .footnote {
+            font-size: 0.85rem;
+            color: #8e7b66;
+            text-align: right;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        @media (max-width: 600px) {
+            .worksheet {
+                padding: 1.5rem 1rem;
+            }
+            input[type="text"].blank-input {
+                min-width: 70px;
+                font-size: 0.85rem;
+            }
+            input[type="text"].blank-input.long {
+                min-width: 110px;
+            }
+            input[type="text"].blank-input.xlong {
+                min-width: 140px;
+            }
+            .dialogue-box {
+                padding: 1rem 1rem;
+            }
+            .dialogue-box p {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.15rem;
+            }
+            .dialogue-box .blank-input {
+                min-width: 100px;
+                width: 100%;
+            }
+            textarea.blank-textarea {
+                width: 100%;
+            }
+            .btn {
+                padding: 0.55rem 1.2rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="worksheet">
+        <div class="content-wrapper">
+            <h1>🌿 Expressing opinions</h1>
+            <p class="subtitle">Vocabulary recall &amp; saying more than "I think" · B1–B2</p>
+
+            <!-- EXERCISE 1 – Vocabulary review -->
+            <div class="section" id="section-ex1">
+                <div class="section-title"><span>1</span> Vocabulary warm‑up</div>
+                <p style="margin-bottom:0.8rem; color:#4a3b2f;">Complete each sentence with a word from the box. <em>Used words will be crossed out.</em></p>
+                <div class="word-box" id="word-box-ex1">
+                    <span class="word-chip" data-word="desert">desert</span>
+                    <span class="word-chip" data-word="dessert">dessert</span>
+                    <span class="word-chip" data-word="kelp">kelp</span>
+                    <span class="word-chip" data-word="seaweed">seaweed</span>
+                    <span class="word-chip" data-word="work of art">work of art</span>
+                    <span class="word-chip" data-word="adjust">adjust</span>
+                    <span class="word-chip" data-word="get tired of">get tired of</span>
+                    <span class="word-chip" data-word="sight">sight</span>
+                </div>
+                <ul class="exercise-list" id="ex1-list">
+                    <li><span class="line-content">1. The Sahara is the largest hot <input type="text" class="blank-input ex1-input" data-answer="desert" data-q="1" placeholder="__________"> in the world.</span></li>
+                    <li><span class="line-content">2. After the main course, we ordered a chocolate <input type="text" class="blank-input ex1-input" data-answer="dessert" data-q="2" placeholder="__________"> with vanilla ice cream.</span></li>
+                    <li><span class="line-content">3. Many Asian soups contain nutritious <input type="text" class="blank-input ex1-input" data-answer="seaweed" data-q="3" placeholder="__________"> such as wakame and kombu.</span></li>
+                    <li><span class="line-content">4. <input type="text" class="blank-input ex1-input" data-answer="kelp" data-q="4" placeholder="__________"> forests under the sea provide shelter for fish and produce oxygen.</span></li>
+                    <li><span class="line-content">5. This sculpture is a genuine <input type="text" class="blank-input ex1-input" data-answer="work of art" data-q="5" placeholder="__________"> — every detail is breathtaking.</span></li>
+                    <li><span class="line-content">6. It took me a few days to <input type="text" class="blank-input ex1-input" data-answer="adjust" data-q="6" placeholder="__________"> to the humid climate after moving.</span></li>
+                    <li><span class="line-content">7. I never <input type="text" class="blank-input ex1-input" data-answer="get tired of" data-q="7" placeholder="__________"> watching the sunset over the ocean; it's always magical.</span></li>
+                    <li><span class="line-content">8. The Northern Lights are an unforgettable <input type="text" class="blank-input ex1-input" data-answer="sight" data-q="8" placeholder="__________"> that attracts millions of visitors.</span></li>
+                </ul>
+            </div>
+
+            <!-- EXERCISE 2 – Opinion phrases replacement -->
+            <div class="section" id="section-ex2">
+                <div class="section-title"><span>2</span> Beyond "I think"</div>
+                <p style="margin-bottom:0.5rem; color:#4a3b2f;">Rewrite each sentence, replacing <strong>"I think"</strong> with a different phrase from the list. <em>Use each phrase only once.</em></p>
+                <div class="phrase-bank" id="phrase-bank-ex2">
+                    <span>In my opinion</span> <span>I believe</span> <span>In my experience</span>
+                    <span>It seems that</span> <span>I guess</span> <span>To my mind</span>
+                    <span>It is probably</span> <span>In my point of view</span>
+                    <span>I suppose</span> <span>I assume</span> <span>As for me</span>
+                </div>
+                <ul class="exercise-list" id="ex2-list">
+                    <li><span class="line-content">1. I think kelp tastes better than regular seaweed. → <input type="text" class="blank-input long ex2-input" data-answer="In my opinion" data-q="1" placeholder="_________________"></span></li>
+                    <li><span class="line-content">2. I think this painting is a true work of art. → <input type="text" class="blank-input long ex2-input" data-answer="To my mind" data-q="2" placeholder="_________________"></span></li>
+                    <li><span class="line-content">3. I think you'll get tired of the same sight after a week. → <input type="text" class="blank-input long ex2-input" data-answer="I guess" data-q="3" placeholder="_________________"></span></li>
+                    <li><span class="line-content">4. I think the dessert needs a little more sugar. → <input type="text" class="blank-input long ex2-input" data-answer="It seems that" data-q="4" placeholder="_________________"></span></li>
+                    <li><span class="line-content">5. I think it's hard to adjust to desert life. → <input type="text" class="blank-input long ex2-input" data-answer="In my experience" data-q="5" placeholder="_________________"></span></li>
+                    <li><span class="line-content">6. I think seaweed snacks are an acquired taste. → <input type="text" class="blank-input long ex2-input" data-answer="I assume" data-q="6" placeholder="_________________"></span></li>
+                    <li><span class="line-content">7. I think the view from the dune is the most beautiful sight here. → <input type="text" class="blank-input long ex2-input" data-answer="In my point of view" data-q="7" placeholder="_________________"></span></li>
+                    <li><span class="line-content">8. I think a good dessert can be a work of art. → <input type="text" class="blank-input long ex2-input" data-answer="I believe" data-q="8" placeholder="_________________"></span></li>
+                    <li><span class="line-content">9. I think tourists often get tired of crowded sights. → <input type="text" class="blank-input long ex2-input" data-answer="It is probably" data-q="9" placeholder="_________________"></span></li>
+                    <li><span class="line-content">10. I think you can adjust the recipe by replacing kelp with spinach. → <input type="text" class="blank-input long ex2-input" data-answer="I suppose" data-q="10" placeholder="_________________"></span></li>
+                    <li><span class="line-content">11. I think the desert at night is a magical sight. → <input type="text" class="blank-input long ex2-input" data-answer="As for me" data-q="11" placeholder="_________________"></span></li>
+                </ul>
+            </div>
+
+            <!-- EXERCISE 3 – Personalised opinion practice -->
+            <div class="section" id="section-ex3">
+                <div class="section-title"><span>3</span> Your turn</div>
+                <p style="margin-bottom:0.8rem; color:#4a3b2f;">Answer the questions below. Use <strong>at least two different opinion phrases</strong> and include the underlined vocabulary word in each answer.</p>
+                <ul class="exercise-list" id="ex3-list">
+                    <li><span class="line-content">1. Do you think <u>seaweed</u> and <u>kelp</u> belong in everyday meals? Why / why not?</span>
+                        <textarea class="blank-textarea ex3-input" data-q="1" data-keywords="seaweed,kelp" placeholder="Write your answer here..."></textarea></li>
+                    <li><span class="line-content">2. Can a <u>dessert</u> be considered a <u>work of art</u>? Give an example or explain your view.</span>
+                        <textarea class="blank-textarea ex3-input" data-q="2" data-keywords="dessert,work of art" placeholder="Write your answer here..."></textarea></li>
+                    <li><span class="line-content">3. How long does it take you to <u>adjust</u> to a completely new place? What helps you?</span>
+                        <textarea class="blank-textarea ex3-input" data-q="3" data-keywords="adjust" placeholder="Write your answer here..."></textarea></li>
+                    <li><span class="line-content">4. What's a <u>sight</u> you never <u>get tired of</u> seeing? Why is it special?</span>
+                        <textarea class="blank-textarea ex3-input" data-q="4" data-keywords="sight,get tired of" placeholder="Write your answer here..."></textarea></li>
+                    <li><span class="line-content">5. Would you like to spend a night in the <u>desert</u>? What would be exciting or difficult about it?</span>
+                        <textarea class="blank-textarea ex3-input" data-q="5" data-keywords="desert" placeholder="Write your answer here..."></textarea></li>
+                </ul>
+            </div>
+
+            <!-- EXERCISE 4 – Dialogue completion -->
+            <div class="section" id="section-ex4">
+                <div class="section-title"><span>4</span> Dialogue gap‑fill</div>
+                <p style="margin-bottom:0.8rem; color:#4a3b2f;">Complete the conversation with <strong>opinion phrases</strong> and <strong>vocabulary words</strong> from the lesson.</p>
+                <div class="dialogue-box" id="ex4-dialogue">
+                    <p><strong>Lena:</strong> Have you tried the new café that serves
+                        <input type="text" class="blank-input ex4-input ex4-vocab" data-answer="seaweed" data-q="1" data-type="vocab" placeholder="(sea plant)">
+                        salad?</p>
+                    <p><strong>Max:</strong> Yes!
+                        <input type="text" class="blank-input ex4-input ex4-opinion" data-answer="In my opinion" data-q="2" data-type="opinion" placeholder="(opinion phrase)">
+                        , it's surprisingly delicious. The chef really turned simple ingredients into a
+                        <input type="text" class="blank-input ex4-input ex4-vocab" data-answer="work of art" data-q="3" data-type="vocab" placeholder="(artistic thing)">.</p>
+                    <p><strong>Lena:</strong>
+                        <input type="text" class="blank-input ex4-input ex4-opinion" data-answer="I believe" data-q="4" data-type="opinion" placeholder="(opinion phrase)">
+                        , eating algae every day might make me
+                        <input type="text" class="blank-input ex4-input ex4-vocab" data-answer="get tired of" data-q="5" data-type="vocab" placeholder="(lose interest)">
+                        it quickly.</p>
+                    <p><strong>Max:</strong> Maybe.
+                        <input type="text" class="blank-input ex4-input ex4-opinion" data-answer="I suppose" data-q="6" data-type="opinion" placeholder="(opinion phrase)">
+                        if you
+                        <input type="text" class="blank-input ex4-input ex4-vocab" data-answer="adjust" data-q="7" data-type="vocab" placeholder="(adapt)">
+                        the seasoning, you'll never get bored.</p>
+                    <p><strong>Lena:</strong> Fair enough. Have you seen their
+                        <input type="text" class="blank-input ex4-input ex4-vocab" data-answer="dessert" data-q="8" data-type="vocab" placeholder="(sweet course)">
+                        menu? The chocolate lava cake looks like a
+                        <input type="text" class="blank-input ex4-input ex4-vocab" data-answer="work of art" data-q="9" data-type="vocab" placeholder="(art expression)">.</p>
+                    <p><strong>Max:</strong>
+                        <input type="text" class="blank-input ex4-input ex4-opinion" data-answer="To my mind" data-q="10" data-type="opinion" placeholder="(opinion phrase)">
+                        , it's almost too beautiful to eat. But
+                        <input type="text" class="blank-input ex4-input ex4-opinion" data-answer="As for me" data-q="11" data-type="opinion" placeholder="(opinion phrase)">
+                        , taste matters more than appearance.</p>
+                    <p><strong>Lena:</strong> True. By the way, the view from the terrace is a breathtaking
+                        <input type="text" class="blank-input ex4-input ex4-vocab" data-answer="sight" data-q="12" data-type="vocab" placeholder="(something you see)">.
+                        You can even see the
+                        <input type="text" class="blank-input ex4-input ex4-vocab" data-answer="desert" data-q="13" data-type="vocab" placeholder="(dry sandy area)">
+                        dunes in the distance.</p>
+                    <p><strong>Max:</strong> Seriously?
+                        <input type="text" class="blank-input ex4-input ex4-opinion" data-answer="It seems that" data-q="14" data-type="opinion" placeholder="(opinion phrase)">
+                        that's the best
+                        <input type="text" class="blank-input ex4-input ex4-vocab" data-answer="sight" data-q="15" data-type="vocab" placeholder="(view word)">
+                        in town!</p>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- Buttons -->
+            <div class="button-row">
+                <button class="btn check-btn" id="btn-check" title="Check your answers">✅ Check Answers</button>
+                <button class="btn show-btn" id="btn-show" title="Reveal correct answers">👁 Show Correct Answers</button>
+                <button class="btn reset-btn" id="btn-reset" title="Clear all inputs and start over">🔄 Reset All</button>
+            </div>
+            <p class="feedback-msg" id="feedback-msg"></p>
+            <p class="footnote">✨ Well done! Now you're ready to express opinions like a pro — without always saying "I think".</p>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            // ============ DATA ============
+            const validOpinionPhrases = [
+                "in my opinion", "i believe", "in my experience",
+                "it seems that", "i guess", "to my mind",
+                "it is probably", "in my point of view",
+                "i suppose", "i assume", "as for me"
+            ];
+
+            const validVocabWords = [
+                "desert", "dessert", "kelp", "seaweed",
+                "work of art", "adjust", "get tired of", "sight"
+            ];
+
+            // Ex3 sample answers (for "show answers")
+            const ex3SampleAnswers = [
+                "In my opinion, seaweed and kelp definitely belong in everyday meals. I believe they are nutritious and add a unique flavour to dishes.",
+                "To my mind, a dessert can absolutely be a work of art. For instance, a beautifully plated chocolate soufflé is a masterpiece.",
+                "In my experience, it takes me about two weeks to adjust to a new place. Exploring the neighbourhood helps me settle in faster.",
+                "As for me, I never get tired of the sight of the ocean at sunset. It is probably the most calming view I know.",
+                "I suppose spending a night in the desert would be thrilling. It seems that the silence and stars would be unforgettable, though the cold might be hard to adjust to."
+            ];
+
+            // ============ DOM REFS ============
+            const ex1Inputs = document.querySelectorAll('.ex1-input');
+            const ex2Inputs = document.querySelectorAll('.ex2-input');
+            const ex3Inputs = document.querySelectorAll('.ex3-input');
+            const ex4Inputs = document.querySelectorAll('.ex4-input');
+            const wordChips = document.querySelectorAll('#word-box-ex1 .word-chip');
+            const feedbackMsg = document.getElementById('feedback-msg');
+            const btnCheck = document.getElementById('btn-check');
+            const btnShow = document.getElementById('btn-show');
+            const btnReset = document.getElementById('btn-reset');
+
+            // ============ FUNCTIONS ============
+
+            /** Normalize string: trim, lowercase, collapse multiple spaces */
+            function normalize(str) {
+                return str.trim().toLowerCase().replace(/\s+/g, ' ');
+            }
+
+            /** Update crossed-out words in Ex1 word box based on current inputs */
+            function updateWordBoxCrossOut() {
+                // Collect all normalized values from Ex1 inputs
+                const usedWords = new Set();
+                ex1Inputs.forEach(inp => {
+                    const val = normalize(inp.value);
+                    if (val && validVocabWords.includes(val)) {
+                        usedWords.add(val);
+                    }
+                });
+
+                // Update chips
+                wordChips.forEach(chip => {
+                    const word = normalize(chip.getAttribute('data-word'));
+                    if (usedWords.has(word)) {
+                        chip.classList.add('used');
+                    } else {
+                        chip.classList.remove('used');
+                    }
+                });
+            }
+
+            /** Clear all highlight classes from inputs */
+            function clearAllHighlights() {
+                const allInputs = document.querySelectorAll('.blank-input, .blank-textarea');
+                allInputs.forEach(inp => {
+                    inp.classList.remove('correct', 'incorrect');
+                });
+                feedbackMsg.textContent = '';
+                feedbackMsg.className = 'feedback-msg';
+            }
+
+            /** Check Exercise 1 */
+            function checkEx1() {
+                let correctCount = 0;
+                const total = ex1Inputs.length;
+                ex1Inputs.forEach(inp => {
+                    const userAnswer = normalize(inp.value);
+                    const correctAnswer = normalize(inp.getAttribute('data-answer'));
+                    inp.classList.remove('correct', 'incorrect');
+                    if (userAnswer === correctAnswer) {
+                        inp.classList.add('correct');
+                        correctCount++;
+                    } else if (userAnswer !== '') {
+                        inp.classList.add('incorrect');
+                    }
+                });
+                return { correctCount, total };
+            }
+
+            /** Check Exercise 2 */
+            function checkEx2() {
+                let correctCount = 0;
+                const total = ex2Inputs.length;
+                const usedPhrases = [];
+                ex2Inputs.forEach(inp => {
+                    const userAnswer = normalize(inp.value);
+                    inp.classList.remove('correct', 'incorrect');
+                    if (userAnswer !== '') {
+                        usedPhrases.push(userAnswer);
+                    }
+                });
+
+                // Check for duplicates
+                const duplicateSet = new Set();
+                const duplicates = [];
+                usedPhrases.forEach(p => {
+                    if (duplicateSet.has(p)) {
+                        duplicates.push(p);
+                    }
+                    duplicateSet.add(p);
+                });
+
+                ex2Inputs.forEach(inp => {
+                    const userAnswer = normalize(inp.value);
+                    const correctAnswer = normalize(inp.getAttribute('data-answer'));
+                    inp.classList.remove('correct', 'incorrect');
+                    if (userAnswer === '') {
+                        // empty — no highlight
+                    } else if (validOpinionPhrases.includes(userAnswer)) {
+                        // It's a valid phrase
+                        if (userAnswer === correctAnswer) {
+                            inp.classList.add('correct');
+                            correctCount++;
+                        } else {
+                            // valid phrase but not the suggested one — still acceptable
+                            inp.classList.add('correct');
+                            correctCount++;
+                        }
+                    } else {
+                        inp.classList.add('incorrect');
+                    }
+                });
+
+                // Check duplicates
+                const dupCount = duplicates.length;
+                return { correctCount, total, dupCount, duplicates };
+            }
+
+            /** Check Exercise 3 — basic: not empty, contains at least one opinion phrase */
+            function checkEx3() {
+                let filledCount = 0;
+                const total = ex3Inputs.length;
+                ex3Inputs.forEach(inp => {
+                    const val = inp.value.trim();
+                    inp.classList.remove('correct', 'incorrect');
+                    if (val.length > 10) {
+                        // Check if it contains at least one opinion phrase
+                        const lowerVal = val.toLowerCase();
+                        const hasOpinion = validOpinionPhrases.some(ph => lowerVal.includes(ph));
+                        if (hasOpinion) {
+                            inp.classList.add('correct');
+                            filledCount++;
+                        } else {
+                            // Has text but missing opinion phrase
+                            inp.classList.add('incorrect');
+                        }
+                    } else if (val.length > 0) {
+                        inp.classList.add('incorrect');
+                    }
+                });
+                return { filledCount, total };
+            }
+
+            /** Check Exercise 4 */
+            function checkEx4() {
+                let correctCount = 0;
+                const total = ex4Inputs.length;
+                ex4Inputs.forEach(inp => {
+                    const userAnswer = normalize(inp.value);
+                    const correctAnswer = normalize(inp.getAttribute('data-answer'));
+                    const type = inp.getAttribute('data-type');
+                    inp.classList.remove('correct', 'incorrect');
+
+                    if (userAnswer === '') {
+                        // empty — no highlight
+                        return;
+                    }
+
+                    if (type === 'vocab') {
+                        if (userAnswer === correctAnswer) {
+                            inp.classList.add('correct');
+                            correctCount++;
+                        } else if (validVocabWords.includes(userAnswer)) {
+                            // valid vocab but different word — still acceptable if it fits
+                            inp.classList.add('correct');
+                            correctCount++;
+                        } else {
+                            inp.classList.add('incorrect');
+                        }
+                    } else if (type === 'opinion') {
+                        if (validOpinionPhrases.includes(userAnswer)) {
+                            inp.classList.add('correct');
+                            correctCount++;
+                        } else {
+                            inp.classList.add('incorrect');
+                        }
+                    }
+                });
+                return { correctCount, total };
+            }
+
+            /** Main check function */
+            function checkAllAnswers() {
+                clearAllHighlights();
+                updateWordBoxCrossOut();
+
+                const ex1Result = checkEx1();
+                const ex2Result = checkEx2();
+                const ex3Result = checkEx3();
+                const ex4Result = checkEx4();
+
+                const totalCorrect = ex1Result.correctCount + ex2Result.correctCount + ex3Result.filledCount + ex4Result
+                    .correctCount;
+                const totalQuestions = ex1Result.total + ex2Result.total + ex3Result.total + ex4Result.total;
+
+                let msg = '';
+                if (totalCorrect === totalQuestions) {
+                    msg = '🌟 Excellent! All answers look great!';
+                    feedbackMsg.className = 'feedback-msg success';
+                } else if (totalCorrect >= totalQuestions * 0.7) {
+                    msg = `👍 Good job! ${totalCorrect}/${totalQuestions} correct. Review the highlighted fields.`;
+                    feedbackMsg.className = 'feedback-msg partial';
+                } else if (totalCorrect > 0) {
+                    msg = `📝 Keep going! ${totalCorrect}/${totalQuestions} correct. Check the red-underlined answers.`;
+                    feedbackMsg.className = 'feedback-msg error';
+                } else {
+                    msg = '🤔 No answers detected yet. Give it a try!';
+                    feedbackMsg.className = 'feedback-msg error';
+                }
+
+                if (ex2Result.dupCount > 0) {
+                    msg +=
+                        ` ⚠️ Note: You repeated some phrases in Exercise 2. Try using each phrase only once.`;
+                }
+
+                feedbackMsg.textContent = msg;
+            }
+
+            /** Show all correct answers */
+            function showAllAnswers() {
+                clearAllHighlights();
+
+                // Ex1
+                ex1Inputs.forEach(inp => {
+                    inp.value = inp.getAttribute('data-answer');
+                    inp.classList.add('correct');
+                });
+                updateWordBoxCrossOut();
+                // Also cross out all words since they're all used
+                wordChips.forEach(chip => chip.classList.add('used'));
+
+                // Ex2
+                ex2Inputs.forEach(inp => {
+                    inp.value = inp.getAttribute('data-answer');
+                    inp.classList.add('correct');
+                });
+
+                // Ex3
+                ex3Inputs.forEach((inp, i) => {
+                    if (i < ex3SampleAnswers.length) {
+                        inp.value = ex3SampleAnswers[i];
+                    }
+                    inp.classList.add('correct');
+                });
+
+                // Ex4
+                ex4Inputs.forEach(inp => {
+                    inp.value = inp.getAttribute('data-answer');
+                    inp.classList.add('correct');
+                });
+
+                feedbackMsg.textContent = '📋 Correct answers are now displayed. Study them and try again!';
+                feedbackMsg.className = 'feedback-msg success';
+            }
+
+            /** Reset all inputs and highlights */
+            function resetAll() {
+                clearAllHighlights();
+                const allInputs = document.querySelectorAll('.blank-input, .blank-textarea');
+                allInputs.forEach(inp => {
+                    inp.value = '';
+                    inp.classList.remove('correct', 'incorrect');
+                });
+                wordChips.forEach(chip => chip.classList.remove('used'));
+                feedbackMsg.textContent = '';
+                feedbackMsg.className = 'feedback-msg';
+            }
+
+            // ============ EVENT LISTENERS ============
+
+            // Update word box cross-out on any Ex1 input change
+            ex1Inputs.forEach(inp => {
+                inp.addEventListener('input', function() {
+                    clearAllHighlights();
+                    feedbackMsg.textContent = '';
+                    feedbackMsg.className = 'feedback-msg';
+                    updateWordBoxCrossOut();
+                });
+            });
+
+            // Clear highlights on any manual edit in other exercises
+            document.querySelectorAll('.ex2-input, .ex3-input, .ex4-input').forEach(inp => {
+                inp.addEventListener('input', function() {
+                    clearAllHighlights();
+                    feedbackMsg.textContent = '';
+                    feedbackMsg.className = 'feedback-msg';
+                });
+                inp.addEventListener('focus', function() {
+                    this.classList.remove('correct', 'incorrect');
+                });
+            });
+
+            // Ex1 inputs also clear highlights on focus
+            ex1Inputs.forEach(inp => {
+                inp.addEventListener('focus', function() {
+                    this.classList.remove('correct', 'incorrect');
+                    feedbackMsg.textContent = '';
+                    feedbackMsg.className = 'feedback-msg';
+                });
+            });
+
+            // Button handlers
+            btnCheck.addEventListener('click', checkAllAnswers);
+            btnShow.addEventListener('click', showAllAnswers);
+            btnReset.addEventListener('click', resetAll);
+
+            // Initialise word box state
+            updateWordBoxCrossOut();
+
+            console.log('🌿 Expressing Opinions worksheet ready!');
+            console.log('   - Type in any field to fill blanks');
+            console.log('   - Ex1: used words are automatically crossed out');
+            console.log('   - Click "Check Answers" to validate');
+            console.log('   - Click "Show Correct Answers" to reveal all answers');
+            console.log('   - Click "Reset All" to start over');
+        })();
+    </script>
+</body>
+</html>
